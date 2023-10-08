@@ -1,12 +1,15 @@
-from starlette.responses import JSONResponse
-from joblib import load
-import pandas as pd
+# Now you can import the modules since they should be installed
 from fastapi import FastAPI
+from starlette.responses import JSONResponse
+import pandas as pd
+from joblib import load
+
 
 app = FastAPI()
 
 # Load your RandomForest model here
-rfr_model = load('C:\\Users\\User\\ahmedkhursheed\\Deployment\\rfModel_api\\models\\RandomForest_model.joblib')
+rfr_model = load(r'C:\Users\User\ahmedkhursheed\Deployment\rfrModelApi\models\RandomForest_model.joblib')
+
 
 @app.get("/")
 def read_root():

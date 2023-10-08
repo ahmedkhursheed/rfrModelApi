@@ -1,0 +1,10 @@
+version: '3'
+services:
+    core_api:
+       build: .
+       platform: linux/amd64
+       container_name: "rfrModelApi"
+       ports:
+            - "7000:15400"
+       volumes:
+            - .\app\:/app  # Use backslashes for Windows path
