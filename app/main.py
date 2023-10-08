@@ -1,3 +1,9 @@
+pip install fastapi
+pip install starlette
+pip install pandas
+pip install joblib
+
+
 # Now you can import the modules since they should be installed
 from fastapi import FastAPI
 from starlette.responses import JSONResponse
