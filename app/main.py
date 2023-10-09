@@ -1,13 +1,8 @@
-pip install fastapi
-pip install starlette
-pip install pandas
-pip install joblib
-
 
 # Now you can import the modules since they should be installed
 from fastapi import FastAPI
-from starlette.responses import JSONResponse
 import pandas as pd
+from starlette.responses import JSONResponse
 from joblib import load
 
 
@@ -20,6 +15,10 @@ rfr_model = load(r'C:\Users\User\ahmedkhursheed\Deployment\rfrModelApi\models\Ra
 @app.get("/")
 def read_root():
     return {"Hello": "World"}
+
+@app.get('/Sales_Revenue', status_code=200)
+def sales():
+    return 'rfr classifier is all ready to go!'
 
 # Remove Sales_Revenue parameter from format_features function
 def format_features(
